@@ -20,4 +20,8 @@ removeWalls takes in two cells. It then figures out the relationship between the
 selectNextPath is a recursive method that uses the depth first search alogorithm to determine which walls to remove.<br><br>
 generateMaze will create a maze with the given dimensions, select a cell at random, and call the selectNextPath method using that random cell.
 </h5>
+  
+<h4>
+When the maze maker is generating correct mazes, pick a random cell along the border and remove its exterior wall. This will be the starting point. Then select a random cell along the opposite wall and remove its exterior wall. This will be the finish line.
+</h4>
 </html>
