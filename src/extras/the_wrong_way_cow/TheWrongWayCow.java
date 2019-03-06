@@ -39,12 +39,14 @@
 //.ow.c..
 //.c.....
 
-package _00_Intro_To_2D_Arrays;
+package extras.the_wrong_way_cow;
 
-public class WrongWayCow {
+public class TheWrongWayCow {
 
     public static int[] findWrongWayCow(final char[][] field) {
         // Fill in the code to return the x,y coordinate position of the
         // head (letter 'c') of the wrong way cow!
+        
+        return null;
     }
 }
