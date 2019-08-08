@@ -34,7 +34,7 @@ public class MazeMaker{
 	private static void selectNextPath(Cell currentCell) {
 		//A. mark cell as visited
 
-		//B. check for unvisited neighbors using the cell
+		//B. Get an ArrayList of unvisited neighbors using the current cell and the method below
 		
 		//C. if has unvisited neighbors,
 		
