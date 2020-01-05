@@ -94,54 +94,29 @@ public class MazeMaker{
 	//   to the ArrayList
 	private static ArrayList<Cell> getUnvisitedNeighbors(Cell c) {
 		ArrayList<Cell> neighbors = new ArrayList<Cell>();
-		try {
-			if (!maze.cells[c.getX()-1][c.getY()-1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()-1][c.getY()-1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()][c.getY()-1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()][c.getY()-1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()+1][c.getY()-1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()+1][c.getY()-1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()-1][c.getY()].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()-1][c.getY()]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()+1][c.getY()].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()+1][c.getY()]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()-1][c.getY()+1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()-1][c.getY()+1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()][c.getY()+1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()][c.getY()+1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
-		} try {
-			if (!maze.cells[c.getX()+1][c.getY()+1].hasBeenVisited()) {
-				neighbors.add(maze.cells[c.getX()+1][c.getY()+1]);
-			}
-		} catch (Exception IndexOutOfBoundsException) {
-			System.out.println("oob");
+		if (c.getX() - 1 >= 0 && c.getY() - 1 >= 0 && maze.cells[c.getX()-1][c.getY()-1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()-1][c.getY()-1]);
+		}
+		if (c.getY() - 1 >= 0 && !maze.cells[c.getX()][c.getY()-1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()][c.getY()-1]);
+		}
+		if (c.getX() + 1 < maze.cells.length && c.getY() - 1 >= 0 && !maze.cells[c.getX()+1][c.getY()-1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()+1][c.getY()-1]);
+		}
+		if (c.getX() - 1 >= 0 && !maze.cells[c.getX()-1][c.getY()].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()-1][c.getY()]);
+		}
+		if (c.getX() + 1 < maze.cells.length && !maze.cells[c.getX()+1][c.getY()].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()+1][c.getY()]);
+		}
+		if (c.getX() - 1 >= 0 && c.getY() + 1 < maze.cells.length && !maze.cells[c.getX()-1][c.getY()+1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()-1][c.getY()+1]);
+		}
+		if (c.getY() + 1 < maze.cells.length && !maze.cells[c.getX()][c.getY()+1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()][c.getY()+1]);
+		}
+		if (c.getY() + 1 < maze.cells.length && c.getX() + 1 < maze.cells.length && !maze.cells[c.getX()+1][c.getY()+1].hasBeenVisited()) {
+			neighbors.add(maze.cells[c.getX()+1][c.getY()+1]);
 		}
 		return neighbors;
 	}
